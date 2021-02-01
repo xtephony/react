@@ -1,21 +1,18 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
-import Directory from './components/DirectoryComponent';
+import Main from './components/MainComponent';
 import './App.css';
 
+
 class App extends Component {
+      //render method returns the directory component with a props to it
+    // props name is campsites from the state object with the value CAMPSITES, an array passed into the directory component
     render() {
         return (
             <div className="App">
-                <Navbar dark color="primary">
-                <div className="container">
-                    <NavbarBrand href="/">NuCamp</NavbarBrand>
-                </div>
-                </Navbar>
-                <Directory />
+                <Main />
             </div>
         );
-    }
+    };
 }
 
 export default App;

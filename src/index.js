@@ -1,9 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'; // sending the React module code
+import ReactDOM from 'react-dom'; // interacts with the DOM
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'typeface-lobster';
+import 'typeface-open-sans';
+import App from './App'; //importing the App.js file
+
 
 ReactDOM.render(
   <React.StrictMode>
