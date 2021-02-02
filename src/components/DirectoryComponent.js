@@ -8,7 +8,7 @@ class Directory extends Component {
   
 // the render method
     render() {
-        const directory = this.props.campsites.map(campsite => {
+         const directory = this.props.campsites.map(campsite => {
             return (
                 // this is the JSX 
                 <div key={campsite.id} className = "col-md-5 m-1">
