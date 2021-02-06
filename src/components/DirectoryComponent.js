@@ -1,26 +1,28 @@
 import React from 'react';
-/*importing built in components in reactstrap*/
 import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
-
-function RenderDirectoryItem({campsite, onClick}) {
-    return(
-        <Card onClick={() => onClick(campsite.id)}>
-            <CardImg width="100%" src={campsite.image} alt={campsite.name} />
+function RenderDirectoryItem({campsite}) {
+    return (
+        <Card>
+            <Link to={`/directory/${campsite.id}`}>
+                <CardImg width="100%" src={campsite.image} alt={campsite.name} />
                 <CardImgOverlay>
-                    <CardTitle>{campsite.name}</CardTitle>                        
-                </CardImgOverlay>                     
+                    <CardTitle>{campsite.name}</CardTitle>
+                </CardImgOverlay>
+            </Link>
         </Card>                   
     );
 }
 
 /* class components are objects declared as a class by { Directory />} */
 function Directory(props) {
-    const directory = props.campsites.map(campsite => {
+
+    const directory = props.campsites.map((campsite) => {
             return (
                 // this is the JSX 
                 <div key={campsite.id} className = "col-md-5 m-1">
-                   <RenderDirectoryItem campsite={campsite} onClick={props.onClick} /> 
+                   <RenderDirectoryItem campsite={campsite} /> 
                 </div>
             );
         });
@@ -32,7 +34,6 @@ function Directory(props) {
                 <div className = "row">
                     {directory}
                 </div>
-
             </div>
         );
     }

@@ -33,26 +33,22 @@ function RenderCampsite({campsite}) {
         return <div />
     }
 
-
-    
-    
+   
     /* conditional rendering which renders based on conditions */
    function CampsiteInfo(props) {
         if(props.campsite) {
             return (
                 <div className="container">
                     <div className = "row">
-                   <RenderCampsite campsite={props.campsite} /> 
-                    <RenderComments comments={props.campsite.comments} /> 
+                        <RenderCampsite campsite={props.campsite} /> 
+                        <RenderComments comments={props.comments} /> 
                     </div>
                 </div>
             )
         }
-        else {
-            return (
-                <div />
-            );
-        }
+        
+            return <div />;
+            
     }
 
 
